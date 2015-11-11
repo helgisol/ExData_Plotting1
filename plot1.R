@@ -21,8 +21,8 @@ obtainRawData <- function(dataFileName) {
 # Read source data.
 readData <- function() {
   
-  dataFileName <- "household_power_consumption.txt";
-  obtainRawData(dataFileName);
+  dataFileName <- "household_power_consumption.txt"
+  obtainRawData(dataFileName)
   data <- read.csv(dataFileName, sep=";", na.strings="?", colClasses = c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))  
   data$Date <- as.Date(data$Date,"%d/%m/%Y")
   data <- data[data$Date >= as.Date("2007-02-01") & data$Date <= as.Date("2007-02-02"),]
